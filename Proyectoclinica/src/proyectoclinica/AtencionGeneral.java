@@ -23,21 +23,19 @@ public class AtencionGeneral {
     private int nroatencion;
     private String fechaatencion;
     private int total;
-    private int idpersonalvet;
-    private int idpersonalasis;
-    private int nrohistorial;
+    private int idpersonal;
+    private int ci_propietario;
     DefaultTableModel model;
     Conexion cnx=new Conexion();
  
 
     
-    public AtencionGeneral(int nroatencio, String fechaaten, int total, int idpervet, int idperasis, int nrohist) {
+    public AtencionGeneral(int nroatencio, String fechaaten, int total, int idperasis, int ci_pro) {
         this.nroatencion = nroatencio;
         this.fechaatencion = fechaaten;
         this.total = total;
-        this.idpersonalvet=idpervet;
-        this.idpersonalasis= idperasis;
-        this.nrohistorial=nrohist;
+        this.idpersonal= idperasis;
+        this.ci_propietario=ci_pro;
    
       
     }
@@ -45,9 +43,8 @@ public class AtencionGeneral {
         this.nroatencion = 0;
         this. fechaatencion = "";
         this.total = 0;
-        this.idpersonalvet = 0;
-        this.idpersonalasis = 0;
-        this.nrohistorial = 0;
+        this.idpersonal = 0;
+        this.ci_propietario = 0;
  
         
     }
@@ -76,42 +73,44 @@ public class AtencionGeneral {
         this.total = total;
     }
 
-    public int getIdpersonalvet() {
-        return idpersonalvet;
+    public int getIdpersonal() {
+        return idpersonal;
     }
 
-    public void setIdpersonalvet(int idpersonalvet) {
-        this.idpersonalvet = idpersonalvet;
+    public void setIdpersonal(int idpersonal) {
+        this.idpersonal = idpersonal;
     }
 
-    public int getIdpersonalasis() {
-        return idpersonalasis;
+    public int getCi_propietario() {
+        return ci_propietario;
     }
 
-    public void setIdpersonalasis(int idpersonalasis) {
-        this.idpersonalasis = idpersonalasis;
-    }
-
-    public int getNrohistorial() {
-        return nrohistorial;
-    }
-
-    public void setNrohistorial(int nrohistorial) {
-        this.nrohistorial = nrohistorial;
+    public void setCi_propietario(int ci_propietario) {
+        this.ci_propietario = ci_propietario;
     }
 
    
+   
 
       
-    public void Insertar(int nraten,String atenfecha,int totals, int idvet, int idasis, int nrohist){
+    public void Insertar(int nraten,String atenfecha,int totals, int idasis, int ci_pro){
      
       this.setNroatencion(nraten);
       this.setFechaatencion(atenfecha);
       this.setTotal(totals);
-      this.setIdpersonalvet(idvet);
-      this.setIdpersonalasis(idasis);
-      this.setNrohistorial(nrohist);
-      cnx.EjecutarComando("insert into atenciongeneral values("+nroatencion+",'"+fechaatencion+"',"+total+","+idpersonalvet+","+idpersonalasis+","+nrohistorial+");");
+      this.setIdpersonal(idasis);
+      this.setCi_propietario(ci_pro);
+      cnx.EjecutarComando("insert into atencion_general values("+nroatencion+",'"+fechaatencion+"',"+idpersonal+","+ci_propietario+");");
+     
+   }  
+    public void Insertarsintotal(int nraten,String atenfecha, int idvet, int idasis){
+     
+      this.setNroatencion(nraten);
+      this.setFechaatencion(atenfecha);
+      this.setIdpersonal(idvet);
+      this.setCi_propietario(idasis);
+     
+      cnx.EjecutarComando("insert into atencion_general (nro_atencion,fecha,idpersonal,ci_propietario) values("+nroatencion+",'"+fechaatencion+"',"+idpersonal+","+ci_propietario+");");
      
    }  
     
@@ -120,9 +119,9 @@ public class AtencionGeneral {
       this.setNroatencion(nraten);
       this.setFechaatencion(atenfecha);
       this.setTotal(totals);
-      this.setIdpersonalvet(idvet);
-      this.setIdpersonalasis(idasis);
-      this.setNrohistorial(nrohist);
+    
+      this.setIdpersonal(idasis);
+     
        cnx.EjecutarComando("delete from detalleservicio where nroatencion="+nraten+";");
       cnx.EjecutarComando("delete from atenciongeneral where nroatencion="+nraten+";");
        
@@ -134,11 +133,10 @@ public class AtencionGeneral {
       this.setNroatencion(nraten);
       this.setFechaatencion(atenfecha);
       this.setTotal(totals);
-      this.setIdpersonalvet(idvet);
-      this.setIdpersonalasis(idasis);
-      this. setNrohistorial(nrohist);
+      this.setIdpersonal(idasis);
   
-      cnx.EjecutarComando("update atenciongeneral set nratencion='"+nraten +"',fechaantencion='"+atenfecha+"',total='"+totals+"',idpersonalvet='"+idvet+"',idpersonalasis='"+idasis+"',nrohistorial='"+nrohist+" where nroatencion='"+nraten+"';");
+  
+      cnx.EjecutarComando("update atenciongeneral set nratencion='"+nraten +"',fechaantencion='"+atenfecha+"',total='"+totals+"',idpersonalvet='"+idvet+"',idpersonal='"+idasis+"',nrohistorial='"+nrohist+" where nroatencion='"+nraten+"';");
     }
     public void Buscar (JTable aten,String Valor)
     {
@@ -147,7 +145,7 @@ public class AtencionGeneral {
             String [] titulos = {"N° ATENCION","FECHA","TOTAL","ID VETERINARIO","ID ASISTENTE","N° HISTORIAL"};
             String[] Registros = new String[15];
             model = new DefaultTableModel(null, titulos);
-            ResultSet rs=cnx.EjecutarConsulta("SELECT nroatencion,fechaatencion,total,idpersonalvet,idpersonalasis,nrohistorial FROM atenciongeneral ; ");
+            ResultSet rs=cnx.EjecutarConsulta("SELECT nroatencion,fechaatencion,total,idpersonalvet,idpersonal,nrohistorial FROM atenciongeneral ; ");
             ResultSetMetaData datos = rs.getMetaData();
             int nc=datos.getColumnCount();
             int i=0;
