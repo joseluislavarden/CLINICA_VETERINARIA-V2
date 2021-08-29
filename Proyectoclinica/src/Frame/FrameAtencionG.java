@@ -334,6 +334,7 @@ Conexion cnx=new Conexion();
            String cod=tabledet.getValueAt(fmod, 1).toString();
            detser.Eliminar(Integer.parseInt(nro), Integer.parseInt(cod));
            detser.Buscarnro(tabledet,jnro.getText());
+          
            
            
             
