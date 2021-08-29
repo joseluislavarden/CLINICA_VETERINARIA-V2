@@ -76,14 +76,19 @@ public void Insertardetalleservicio(int nro_atencion,int codservicio,int precio)
       cnx.EjecutarComando("insert into detalle_servicio values("+nro_atencion+","+codservicio+","+precio+");");
      
    }
- public void Eliminarservicio(int nro_atencion,int codservicio,String descripcion,int precio)
+ public void Eliminar(int nraten,int cod)
    {
-      this.setNro_atencion(nro_atencion);
-       this.setCodservicio(codservicio);
-      this.setPrecio(precio);
-      cnx.EjecutarComando("delete from servicio where cod_servicio="+codservicio+";");
+      this.setNro_atencion(nraten);
+      this.setCodservicio(cod);
+ 
+     
+       cnx.EjecutarComando("delete from detalle_servicio where nro_atencion="+nro_atencion+" and cod_servicio="+codservicio+";");
+     
+       
      
    }
+     
+   
   public void Actualizar(int codservicio,String descripcion,int precio)
     {
    
@@ -114,6 +119,32 @@ public void Insertardetalleservicio(int nro_atencion,int codservicio,int precio)
                 model.addRow(f);
             }
             servicio.setModel(model);
+          } catch (SQLException ex)
+            {
+              Logger.getLogger(servicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+     public void Buscarnro (JTable detalleservicio,String Valor)
+    {
+        try {
+         //   u.IdUsuario,c.CIPersonal,c.Nombre,c.Apellido,c.FechaNac,c.FechaIng,c.Celular,u.Contraseña
+            String [] titulos = {"NUMERO ATENCION","COD","SERVICIO","PRECIO"};
+            String[] Registros = new String[15];
+            model = new DefaultTableModel(null, titulos);
+            ResultSet rs;
+           rs = cnx.EjecutarConsulta("SELECT a.nro_atencion,s.cod_servicio,s.descripcion,d.preciounitario FROM detalle_servicio d, servicio s, atencion_general a where (d.nro_atencion=a.nro_atencion and  s.cod_servicio=d.cod_servicio)and a.nro_atencion="+Valor+"");
+            ResultSetMetaData datos = rs.getMetaData();
+            int nc=datos.getColumnCount();
+            int i=0;
+            int e=0;
+            while (rs.next()) {
+                Object f []= new Object [nc];
+                for(i=0;i<nc;i++){
+                    f[i]=rs.getObject(i+1);          
+                }
+                model.addRow(f);
+            }
+            detalleservicio.setModel(model);
           } catch (SQLException ex)
             {
               Logger.getLogger(servicio.class.getName()).log(Level.SEVERE, null, ex);

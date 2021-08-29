@@ -93,14 +93,10 @@ public class AtencionGeneral {
    
 
       
-    public void Insertar(int nraten,String atenfecha,int totals, int idasis, int ci_pro){
+    public void buscartotal(int nraten){
      
       this.setNroatencion(nraten);
-      this.setFechaatencion(atenfecha);
-      this.setTotal(totals);
-      this.setIdpersonal(idasis);
-      this.setCi_propietario(ci_pro);
-      cnx.EjecutarComando("insert into atencion_general values("+nroatencion+",'"+fechaatencion+"',"+idpersonal+","+ci_propietario+");");
+      cnx.EjecutarComando("select total from atencion_general where nro_atencion="+nroatencion+");");
      
    }  
     public void Insertarsintotal(int nraten,String atenfecha, int idvet, int idasis){
@@ -138,14 +134,25 @@ public class AtencionGeneral {
   
       cnx.EjecutarComando("update atenciongeneral set nratencion='"+nraten +"',fechaantencion='"+atenfecha+"',total='"+totals+"',idpersonalvet='"+idvet+"',idpersonal='"+idasis+"',nrohistorial='"+nrohist+" where nroatencion='"+nraten+"';");
     }
+  public void Actualizartotal(int nraten)
+    {
+   
+      this.setNroatencion(nraten);
+
+ 
+  
+  
+      cnx.EjecutarComando(" update atencion_general set total=(SELECT  SUM(preciounitario)  from detalle_servicio where nro_atencion="+nroatencion+")\n" +
+"  where nro_atencion="+nroatencion+";");
+    }
     public void Buscar (JTable aten,String Valor)
     {
         try {
          //   u.IdUsuario,c.CIPersonal,c.Nombre,c.Apellido,c.FechaNac,c.FechaIng,c.Celular,u.Contraseña
-            String [] titulos = {"N° ATENCION","FECHA","TOTAL","ID VETERINARIO","ID ASISTENTE","N° HISTORIAL"};
+            String [] titulos = {"N° ATENCION","FECHA","TOTAL","ID PERSONAL","CARNET PROPIETARIO"};
             String[] Registros = new String[15];
             model = new DefaultTableModel(null, titulos);
-            ResultSet rs=cnx.EjecutarConsulta("SELECT nroatencion,fechaatencion,total,idpersonalvet,idpersonal,nrohistorial FROM atenciongeneral ; ");
+            ResultSet rs=cnx.EjecutarConsulta("SELECT nro_atencion,fecha,total,idpersonal,ci_propietario FROM atencion_general ; ");
             ResultSetMetaData datos = rs.getMetaData();
             int nc=datos.getColumnCount();
             int i=0;

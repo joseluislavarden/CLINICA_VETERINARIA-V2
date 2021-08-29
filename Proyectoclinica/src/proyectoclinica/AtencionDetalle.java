@@ -65,6 +65,17 @@ public class AtencionDetalle {
       cnx.EjecutarComando("insert into detalleservicio values("+nroatencion+","+codervicio+","+preciounitario+");");
      
    }  
+     public void Eliminar(int nraten,int cod)
+   {
+      this.setNroatencion(nraten);
+      this.setCodervicio(cod);
+ 
+     
+       cnx.EjecutarComando("delete from detalle_servicio where nro_atencion="+nroatencion+" and cod_servicio="+codervicio+";");
+     
+       
+     
+   }
     
     public void mostrarDetalleEnTabla(JTable mitabla, String id_atencion){
         try {

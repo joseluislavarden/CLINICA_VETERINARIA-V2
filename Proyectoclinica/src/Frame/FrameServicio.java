@@ -329,4 +329,6 @@ ser.Buscar(jTable1, "");        // TODO add your handling code here:
     private javax.swing.JTextField jTextFielddescripcion;
     private javax.swing.JTextField jTextFieldprecio;
     // End of variables declaration//GEN-END:variables
+
+
 }
