@@ -68,7 +68,6 @@ Conexion cnx=new Conexion();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jnro = new javax.swing.JTextField();
         jcarnet = new javax.swing.JTextField();
         jpersonal = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -79,7 +78,8 @@ Conexion cnx=new Conexion();
         tablaatencion = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jnro = new javax.swing.JSpinner();
 
         jLabel1.setText("jLabel1");
 
@@ -149,12 +149,6 @@ Conexion cnx=new Conexion();
             }
         });
 
-        jnro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jnroActionPerformed(evt);
-            }
-        });
-
         jpersonal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jpersonalActionPerformed(evt);
@@ -208,14 +202,19 @@ Conexion cnx=new Conexion();
             }
         });
 
-        jLabel3.setText("borrar");
+        jButton7.setText("MOSTRAR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,17 +223,13 @@ Conexion cnx=new Conexion();
                                 .addGap(35, 35, 35)
                                 .addComponent(jButton4))
                             .addComponent(jButton3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton2)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addGap(163, 163, 163))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel5)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(291, 291, 291)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -242,7 +237,6 @@ Conexion cnx=new Conexion();
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addComponent(jnro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jfecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
@@ -254,9 +248,16 @@ Conexion cnx=new Conexion();
                                             .addComponent(jLabel8))
                                         .addComponent(jpersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel4))
-                        .addGap(111, 111, 111)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel4)
+                            .addComponent(jnro, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(111, 111, 111)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton7)
+                                .addGap(263, 263, 263)))))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -267,23 +268,27 @@ Conexion cnx=new Conexion();
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 490, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
-                        .addGap(22, 22, 22))
+                        .addComponent(jButton7)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(jnro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(424, 424, 424)
+                                .addComponent(jButton2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jnro, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton3)
+                                .addGap(22, 22, 22))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(12, 12, 12)
                                 .addComponent(jfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -296,18 +301,16 @@ Conexion cnx=new Conexion();
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jpersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
-                        .addGap(117, 117, 117))))
+                                .addComponent(jpersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1)
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4)
+                                .addGap(117, 117, 117))))))
         );
 
         pack();
@@ -315,7 +318,8 @@ Conexion cnx=new Conexion();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      aten.Insertarsintotal(Integer.parseInt(jnro.getText()),jfecha.getText(),Integer.parseInt(jpersonal.getText()),Integer.parseInt(jcarnet.getText()));
+        int x=(int) jnro.getValue();
+      aten.Insertarsintotal(x,jfecha.getText(),Integer.parseInt(jpersonal.getText()),Integer.parseInt(jcarnet.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jpersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpersonalActionPerformed
@@ -324,12 +328,14 @@ Conexion cnx=new Conexion();
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        int x=(int) jnro.getValue();
+         
                int fmod = tablaservicio.getSelectedRow();
        if (fmod >= 0) {
            String cod=tablaservicio.getValueAt(fmod, 0).toString();
           String pre=tablaservicio.getValueAt(fmod, 2).toString();
-           detser.Insertardetalleservicio(Integer.parseInt(jnro.getText()), Integer.parseInt(cod),Integer.parseInt(pre));
-           detser.Buscarnro(tabledet,jnro.getText());
+           detser.Insertardetalleservicio(x, Integer.parseInt(cod),Integer.parseInt(pre));
+           detser.Buscarnro(tabledet,x);
            
            
             
@@ -340,23 +346,21 @@ Conexion cnx=new Conexion();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      aten.Actualizartotal(Integer.parseInt(jnro.getText()));
+       int x=(int) jnro.getValue();
+        aten.Actualizartotal(x);
       aten.Buscar(tablaatencion, "");
       
      
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jnroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jnroActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-                    int fmod = tabledet.getSelectedRow();
+          int x=(int) jnro.getValue();           
+        int fmod = tabledet.getSelectedRow();
        if (fmod >= 0) {
             String nro=tabledet.getValueAt(fmod, 0).toString();
            String cod=tabledet.getValueAt(fmod, 1).toString();
            detser.Eliminar(Integer.parseInt(nro), Integer.parseInt(cod));
-           detser.Buscarnro(tabledet,jnro.getText());
+           detser.Buscarnro(tabledet,x);
           
            
            
@@ -371,6 +375,13 @@ Conexion cnx=new Conexion();
      FramePropietario pro=new FramePropietario();
      pro.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+      aten.Buscar(tablaatencion, ""); 
+   
+   
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -414,10 +425,10 @@ Conexion cnx=new Conexion();
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -428,7 +439,7 @@ Conexion cnx=new Conexion();
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jcarnet;
     private javax.swing.JTextField jfecha;
-    private javax.swing.JTextField jnro;
+    private javax.swing.JSpinner jnro;
     private javax.swing.JTextField jpersonal;
     private javax.swing.JTable tablaatencion;
     private javax.swing.JTable tablaservicio;

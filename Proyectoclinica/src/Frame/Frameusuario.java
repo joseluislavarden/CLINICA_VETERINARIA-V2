@@ -14,7 +14,7 @@ import proyectoclinica.HeaderTable;
 import proyectoclinica.PlaceHolder;
 import proyectoclinica.persona;
 import proyectoclinica.usuario;
-import proyectoclinica.veterinario;
+
 /**
  *
  * @author Male
@@ -31,7 +31,7 @@ public class Frameusuario extends javax.swing.JFrame {
         initComponents();
        //this.formularioEmisor =component.getClass();
         this.setLocationRelativeTo(null); //Mostrar esta ventana centrado al formulario principal
-       this.mostrarDatos();
+      // this.mostrarDatos();
         this.repintarHeaderTabla();
         this.ponerPlaceHolders(); 
         

@@ -149,7 +149,7 @@ public class FramePropietario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 840, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 740, 150));
 
         jButton5.setText("Salir");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +165,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 eliminarjtActionPerformed(evt);
             }
         });
-        getContentPane().add(eliminarjt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 620, 110, 30));
+        getContentPane().add(eliminarjt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 670, 110, 30));
 
         jButton3.setText("AÑADIR MASCOTA");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +173,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 160, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 160, 40));
 
         JBGUARDAR.setText("GUARDAR");
         JBGUARDAR.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +181,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 JBGUARDARActionPerformed(evt);
             }
         });
-        getContentPane().add(JBGUARDAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 110, 30));
+        getContentPane().add(JBGUARDAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 110, 30));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel8.setText("Direccion:");
@@ -203,9 +203,9 @@ public class FramePropietario extends javax.swing.JFrame {
         jLabel3.setText("carnet");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 40));
 
-        jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
-        jLabel2.setText("PROPIETARIO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 360, 40));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel2.setText("CLIENTE/PROPIETARIO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 480, 40));
 
         MOSTRAR.setText("MOSTRAR");
         MOSTRAR.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +213,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 MOSTRARActionPerformed(evt);
             }
         });
-        getContentPane().add(MOSTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
+        getContentPane().add(MOSTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, -1, -1));
 
         MODIFICAR.setText("MODIFICAR");
         MODIFICAR.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +221,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 MODIFICARActionPerformed(evt);
             }
         });
-        getContentPane().add(MODIFICAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 620, 130, 30));
+        getContentPane().add(MODIFICAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 670, 130, 30));
 
         JBSELECCIONAR.setText("SELECCIONAR");
         JBSELECCIONAR.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +229,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 JBSELECCIONARActionPerformed(evt);
             }
         });
-        getContentPane().add(JBSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
+        getContentPane().add(JBSELECCIONAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, -1, -1));
 
         nuevo.setText("NUEVO");
         nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +237,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 nuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 100, 30));
+        getContentPane().add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 670, 100, 30));
 
         JBLIMPIAR.setText("LIMPIAR");
         JBLIMPIAR.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +245,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 JBLIMPIARActionPerformed(evt);
             }
         });
-        getContentPane().add(JBLIMPIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, 90, 30));
+        getContentPane().add(JBLIMPIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 670, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel1.setText("Correo");

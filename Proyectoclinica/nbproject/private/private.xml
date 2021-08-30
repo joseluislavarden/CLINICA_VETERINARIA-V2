@@ -3,26 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/historial.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FramePersonal.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameRaza.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameTipoPersonal.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/AtencionGeneral.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameAtencionG.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameTipoAnimal.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameServicio.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/Index.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/Frameprincipal.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FramePropietario.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/detalleservicio.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/usuario.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameHistorial.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/FrameAnimal.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Frame/Frameusuario.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/Animal.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/raza.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/proyectoclinica/Propietario.java</file>
-            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/Proyectoclinica/src/Imagen/fondo.jpg</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/Frameusuario.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/proyectoclinica/tipopersonal.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/FrameServicio.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/Frameprincipal.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/proyectoclinica/detalleservicio.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/proyectoclinica/usuario.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/FrameHistorial.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/FrameAtencionG.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/proyectoclinica/ModeloMostrarDatos.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/Framelogin.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/FramePersonal.java</file>
+            <file>file:/C:/Users/jose%20luis/Desktop/proyectoClinica/proyecto/CLINICA_VETERINARIA-V2/Proyectoclinica/src/Frame/FramePropietario.java</file>
         </group>
     </open-files>
 </project-private>

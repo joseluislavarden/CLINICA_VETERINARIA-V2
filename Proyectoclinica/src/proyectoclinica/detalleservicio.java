@@ -124,7 +124,7 @@ public void Insertardetalleservicio(int nro_atencion,int codservicio,int precio)
               Logger.getLogger(servicio.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
-     public void Buscarnro (JTable detalleservicio,String Valor)
+     public void Buscarnro (JTable detalleservicio,int Valor)
     {
         try {
          //   u.IdUsuario,c.CIPersonal,c.Nombre,c.Apellido,c.FechaNac,c.FechaIng,c.Celular,u.Contraseña
