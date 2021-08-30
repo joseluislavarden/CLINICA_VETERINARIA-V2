@@ -91,14 +91,10 @@ public class historial {
      
    }  
     
-   public void Eliminar(int nrhist, String deshist, String fechahist, int idan)
+   public void Eliminar(int nrhist)
    {
       this.setNrohistorial(nrhist);
-      this.setDescripcionhistorial(deshist);
-      this.setFechahistorial(fechahist);
-      this.setIdanimal(idan);
-     
-      
+   
       cnx.EjecutarComando("delete from historico_animal where nro_historial="+nrohistorial+";");
      
    }
@@ -114,39 +110,15 @@ public class historial {
       cnx.EjecutarComando("update historico_animal set nro_historial="+nrohistorial +",descripcion='"+descripcionhistorial+"',fecha='"+fechahistorial+"',id_animal="+idanimal+" where nro_historial="+nrohistorial+";");
     }
 
-    /*public void BuscarHISTCI (JTable hist,String Valor)
-    {
-        try {
-         //   u.IdUsuario,c.CIPersonal,c.Nombre,c.Apellido,c.FechaNac,c.FechaIng,c.Celular,u.Contraseña
-            String [] titulos = {"N° HISTORIAL","FECHA","DESCRIPCION","MASCOTA","TIPO","RAZA","NOMBRE PROPIETARIO","APELLIDO PROPIETARIO","CI",};
-            String[] Registros = new String[15];
-            model = new DefaultTableModel(null, titulos);
-            ResultSet rs=cnx.EjecutarConsulta("SELECT h.NRO_HISTORIAL,h.FECHA,h.DESCRIPCION,an.NOMBREANIMAL,an.DESCRIPCIONANIMAL,r.DESCRIPCIONRAZA,p.NOMBREPRO,apellidopro,p.cipro FROM HISTORIALCLINICO h,PROPIETARIO p,RAZA r,ANIMAL an WHERE  h.idanimal=an.idanimal and p.idpropietario=an.idpropietario and r.idraza=an.idraza and p.cipro="+Valor+";");
-            ResultSetMetaData datos = rs.getMetaData();
-            int nc=datos.getColumnCount();
-            int i=0;
-            int e=0;
-            while (rs.next()) {
-                Object f []= new Object [nc];
-                for(i=0;i<nc;i++){
-                    f[i]=rs.getObject(i+1);          
-                }
-                model.addRow(f);
-            }
-            hist.setModel(model);
-          } catch (SQLException ex)
-            {
-              Logger.getLogger(Propietario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }*/
+  
     public void Buscarihist (JTable HIST,String valor)
     {
         try {
          //   u.IdUsuario,c.CIPersonal,c.Nombre,c.Apellido,c.FechaNac,c.FechaIng,c.Celular,u.Contraseña
-            String [] titulos = {"N° HISTORIAL","FECHA","DESCRIPCION","ID ANIMAL"};
+            String [] titulos = {"N° HIST","FECHA","DESCRIPCION","ID ANIMAL","MASCOTA","CARNET PROPIETARIO"};
             String[] Registros = new String[15];
             model = new DefaultTableModel(null, titulos);
-            ResultSet rs=cnx.EjecutarConsulta("SELECT NRO_HISTORIAL,FECHA,DESCRIPCION,ID_ANIMAL FROM HISTORICO_ANIMAL");
+            ResultSet rs=cnx.EjecutarConsulta("SELECT HIST.NRO_HISTORIAL,HIST.FECHA,HIST.DESCRIPCION,AN.ID_ANIMAL,AN.ANNOMBRE,AN.CI_PROPIETARIO FROM HISTORICO_ANIMAL HIST, ANIMAL_MASCOTA AN WHERE AN.ID_ANIMAL=HIST.ID_ANIMAL ");
             ResultSetMetaData datos = rs.getMetaData();
             int nc=datos.getColumnCount();
             int i=0;

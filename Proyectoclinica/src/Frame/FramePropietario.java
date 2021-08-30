@@ -82,6 +82,7 @@ public class FramePropietario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         DIRECCION = new javax.swing.JTextPane();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -172,7 +173,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 380, 130, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 160, 40));
 
         JBGUARDAR.setText("GUARDAR");
         JBGUARDAR.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +181,7 @@ public class FramePropietario extends javax.swing.JFrame {
                 JBGUARDARActionPerformed(evt);
             }
         });
-        getContentPane().add(JBGUARDAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 110, 30));
+        getContentPane().add(JBGUARDAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 110, 30));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel8.setText("Direccion:");
@@ -389,6 +390,7 @@ Desbloquear();
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

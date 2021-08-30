@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package proyectoclinica;
-import proyectoclinica.AtencionDetalle;
+
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

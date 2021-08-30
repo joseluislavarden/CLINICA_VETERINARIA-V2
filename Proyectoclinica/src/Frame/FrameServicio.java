@@ -5,7 +5,11 @@
  */
 package Frame;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import proyectoclinica.Conexion;
@@ -22,10 +26,12 @@ public class FrameServicio extends javax.swing.JFrame {
     /**
      * Creates new form FrameServicio
      */
+     FondoPanel fondo=new FondoPanel();
     servicio ser;
     DefaultTableModel model;
     Conexion cnx=new Conexion();
     public FrameServicio() {
+        this.setContentPane(fondo);
         initComponents();
         ser= new servicio();
         this.repintarHeaderTabla();
@@ -102,7 +108,7 @@ public class FrameServicio extends javax.swing.JFrame {
                 jBsalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jBsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 520, 100, 30));
+        getContentPane().add(jBsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 480, 100, 30));
 
         jBeliminar.setText("ELMINAR");
         jBeliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +116,7 @@ public class FrameServicio extends javax.swing.JFrame {
                 jBeliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, 120, 30));
+        getContentPane().add(jBeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 120, 30));
 
         jBmodificar.setText("MODIFICAR");
         jBmodificar.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +124,7 @@ public class FrameServicio extends javax.swing.JFrame {
                 jBmodificarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, 120, 30));
+        getContentPane().add(jBmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 120, 30));
 
         jBguardar.setText("GUARDAR");
         jBguardar.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +132,7 @@ public class FrameServicio extends javax.swing.JFrame {
                 jBguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 120, 30));
+        getContentPane().add(jBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 120, 30));
 
         jBnuevo.setText("NUEVO");
         jBnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +140,7 @@ public class FrameServicio extends javax.swing.JFrame {
                 jBnuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(jBnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 110, 30));
+        getContentPane().add(jBnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 110, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -329,6 +335,16 @@ ser.Buscar(jTable1, "");        // TODO add your handling code here:
     private javax.swing.JTextField jTextFielddescripcion;
     private javax.swing.JTextField jTextFieldprecio;
     // End of variables declaration//GEN-END:variables
-
+class FondoPanel extends JPanel{
+    private Image imagen;
+    
+    @Override
+    public void paint(Graphics g)
+    {   imagen= new ImageIcon(getClass().getResource("/Imagen/fondo.jpg")).getImage();
+       g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+       setOpaque(false);
+       super.paint(g);
+    }
+}
 
 }

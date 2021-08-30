@@ -5,6 +5,11 @@
  */
 package Frame;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import proyectoclinica.Conexion;
@@ -20,10 +25,12 @@ public class FrameHistorial extends javax.swing.JFrame {
     /**
      * Creates new form FrameHistorial
      */
+    FondoPanel fondo=new FondoPanel();
     historial hist;
     DefaultTableModel model;
     Conexion cnx=new Conexion();
     public FrameHistorial(){
+        this.setContentPane(fondo);
        hist= new historial();
                
         initComponents();
@@ -50,14 +57,12 @@ public class FrameHistorial extends javax.swing.JFrame {
         fechah = new javax.swing.JTextPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         idan = new javax.swing.JTextPane();
-        jButton6 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         nrhist = new javax.swing.JTextPane();
         jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablehist = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         guardar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -80,14 +85,6 @@ public class FrameHistorial extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 140, -1));
 
-        jButton6.setText("BUSCAR");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 90, 30));
-
         jScrollPane3.setViewportView(nrhist);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 140, -1));
@@ -98,7 +95,7 @@ public class FrameHistorial extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, 80, 30));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 50, 80, 30));
 
         tablehist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,7 +107,7 @@ public class FrameHistorial extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablehist);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 700, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 720, 210));
 
         jButton4.setText("ELIMINAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -118,15 +115,7 @@ public class FrameHistorial extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 90, 30));
-
-        jButton3.setText("DETALLES");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 100, 110, 30));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 90, 30));
 
         jButton1.setText("MOSTRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +123,7 @@ public class FrameHistorial extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 90, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, 90, 30));
 
         guardar.setText("GUARDAR");
         guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +150,7 @@ public class FrameHistorial extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
-        jLabel2.setText("NUEVO HISTORIAL CLINICO");
+        jLabel2.setText("    HISTORICO CLINICO");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 580, 50));
 
         jScrollPane2.setViewportView(deshis);
@@ -174,7 +163,7 @@ public class FrameHistorial extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 100, 210, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, 210, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,26 +183,25 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-Frameatencion aten=new Frameatencion();
-aten.setVisible(true);// TODO add your handling code here:
+FrameAtencionG aten=new FrameAtencionG();
+aten.setVisible(true);
+this.dispose(); // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-FrameDetalleHistorial HI=new FrameDetalleHistorial();
-HI.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
     int fmod = tablehist.getSelectedRow();
-       
-       
-         
-            hist.Eliminar((int) tablehist.getValueAt(fmod, 0),"","",0);
-            hist.Buscarihist(tablehist,"");
+        
+        if (fmod >= 0) {
+            String nro=tablehist.getValueAt(fmod, 0).toString();
+           hist.Eliminar(Integer.parseInt(nro));
+        hist.Buscarihist(tablehist, ""); 
+          
+           
+           
+            
+        } else {
+            JOptionPane.showMessageDialog(this, "No ha seleccionado ");
+        }
              // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -260,10 +248,8 @@ HI.setVisible(true);// TODO add your handling code here:
     private javax.swing.JTextPane idan;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -277,4 +263,15 @@ HI.setVisible(true);// TODO add your handling code here:
     private javax.swing.JTextPane nrhist;
     private javax.swing.JTable tablehist;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel{
+    private Image imagen;
+    
+    @Override
+    public void paint(Graphics g)
+    {   imagen= new ImageIcon(getClass().getResource("/Imagen/fondo.jpg")).getImage();
+       g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+       setOpaque(false);
+       super.paint(g);
+    }
+}
 }

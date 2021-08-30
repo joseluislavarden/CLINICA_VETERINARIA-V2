@@ -125,16 +125,10 @@ public class Animal {
      
    }  
     
-   public void Eliminar(int idan,String nombrean,String col,String fech, int cipro, int idrz,int tipoan)
+   public void Eliminar(int idan)
    {
         this.setIdanimal(idan);
-      this.setAnnombre(nombrean);
-      this.setColor(col);
-      this.setFecha(fech);
-      this.setCipropietario(cipro);
-      this.setIdraza(idrz);
-      this.setTipoanimal(tipoan);
-
+   
       cnx.EjecutarComando("delete from animal_mascota where id_animal="+idanimal+";");
      
    }

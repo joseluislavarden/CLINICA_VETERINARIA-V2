@@ -45,15 +45,15 @@ public class Frameprincipal extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 200, 50));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 200, 50));
 
-        jButton6.setText("ANIMAL");
+        jButton6.setText("MASCOTA");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 200, 50));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 200, 50));
 
         jButton5.setText("PROPIETARIO");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -61,17 +61,17 @@ public class Frameprincipal extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 200, 50));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 200, 50));
 
-        jButton3.setText("SERVICIO");
+        jButton3.setText("DETALLE SERVICIO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 200, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 200, 50));
 
-        jButton2.setText("HISTORIAL CLINICO");
+        jButton2.setText("ADMINISTRAR SERVICIO");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -79,7 +79,7 @@ public class Frameprincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 200, 60));
 
-        jButton1.setText("ATENCION GENERAL");
+        jButton1.setText("Nueva Atencion");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -94,12 +94,12 @@ public class Frameprincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-Frameatencion aten=new Frameatencion();
+FrameAtencionG aten=new FrameAtencionG();
 aten.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-FrameHistorial hist=new FrameHistorial();
+FrameServicio hist=new FrameServicio();
 hist.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed

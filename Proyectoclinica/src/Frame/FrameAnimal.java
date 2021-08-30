@@ -5,7 +5,12 @@
  */
 package Frame;
 
+import Frame.FrameAtencionG.FondoPanel;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import proyectoclinica.Animal;
@@ -23,14 +28,14 @@ public class FrameAnimal extends javax.swing.JFrame {
     /**
      * Creates new form FrameAnimal
      */
+    FondoPanel fondo=new FondoPanel();
     Animal an;
     raza rz;
     Propietario pro;
-    
     DefaultTableModel model;
-    
     Conexion cnx=new Conexion();
     public FrameAnimal() {
+         this.setContentPane(fondo);             
          an=new Animal();
          rz= new raza();
          pro= new Propietario();
@@ -90,6 +95,7 @@ public class FrameAnimal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablatipoan = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -219,6 +225,14 @@ public class FrameAnimal extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 320, 110));
 
+        jButton4.setText("ELIMINAR");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 600, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -259,6 +273,21 @@ this.dispose();        // TODO add your handling code here:
  FrameHistorial his = new FrameHistorial();
  his.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       int fmod = tablean.getSelectedRow();
+       if (fmod >= 0) {
+          String idan=tablean.getValueAt(fmod, 0).toString();
+          an.Eliminar(Integer.parseInt(idan)); // TODO add your handling code here:
+          an.Buscar(tablean, "");
+        } else {
+            JOptionPane.showMessageDialog(this, "No ha seleccionado ");
+        }    
+        
+        
+      
+      
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,6 +333,7 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -326,4 +356,15 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JTable tablean;
     private javax.swing.JTable tablepro;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel{
+    private Image imagen;
+    
+    @Override
+    public void paint(Graphics g)
+    {   imagen= new ImageIcon(getClass().getResource("/Imagen/fondo.jpg")).getImage();
+       g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+       setOpaque(false);
+       super.paint(g);
+    }
+}
 }
