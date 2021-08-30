@@ -28,12 +28,9 @@ public class Frameprincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton9 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -42,29 +39,13 @@ public class Frameprincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton9.setText("USUARIOS");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 640, 200, 50));
-
-        jButton8.setText("ASISTENTE");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 200, 50));
-
         jButton7.setText("RAZA");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 200, 50));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 200, 50));
 
         jButton6.setText("ANIMAL");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +53,7 @@ public class Frameprincipal extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 200, 50));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 200, 50));
 
         jButton5.setText("PROPIETARIO");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -80,15 +61,7 @@ public class Frameprincipal extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 200, 50));
-
-        jButton4.setText("VETERINARIO");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 200, 50));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 200, 50));
 
         jButton3.setText("SERVICIO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +88,7 @@ public class Frameprincipal extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 200, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/Logo Zoom center.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1200, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,11 +97,6 @@ public class Frameprincipal extends javax.swing.JFrame {
 Frameatencion aten=new Frameatencion();
 aten.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-Frameusuario usu=new Frameusuario();
-usu.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 FrameHistorial hist=new FrameHistorial();
@@ -140,11 +108,6 @@ hist.setVisible(true);
 FrameServicio ser=new FrameServicio();
 ser.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-Frameveterinario vet=new Frameveterinario();
-vet.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 FramePropietario pro=new FramePropietario();
@@ -160,11 +123,6 @@ an.setVisible(true);// TODO add your handling code here:
 FrameRaza rz=new FrameRaza();
 rz.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-Frameasistente asis= new Frameasistente();
-asis.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,12 +166,9 @@ asis.setVisible(true);// TODO add your handling code here:
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

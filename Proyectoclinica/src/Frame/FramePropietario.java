@@ -5,7 +5,12 @@
  */
 package Frame;
 
+import Frame.FrameAtencionG.FondoPanel;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import proyectoclinica.Conexion;
@@ -21,12 +26,14 @@ public class FramePropietario extends javax.swing.JFrame {
     /**
      * Creates new form FramePropietario
      */
+   FondoPanel fondo=new FondoPanel();
    Propietario pro;
     DefaultTableModel model;
     Conexion cnx= new Conexion();
     public FramePropietario(){
     
     pro= new Propietario();
+        this.setContentPane(fondo);
         initComponents();
         Bloquear();
         this.repintarHeaderTabla();
@@ -392,4 +399,15 @@ Desbloquear();
     private javax.swing.JTable jTable1;
     private javax.swing.JButton nuevo;
     // End of variables declaration//GEN-END:variables
-}
+
+class FondoPanel extends JPanel{
+    private Image imagen;
+    
+    @Override
+    public void paint(Graphics g)
+    {   imagen= new ImageIcon(getClass().getResource("/Imagen/fondo.jpg")).getImage();
+       g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+       setOpaque(false);
+       super.paint(g);
+    }
+}}

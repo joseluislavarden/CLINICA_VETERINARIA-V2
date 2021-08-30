@@ -89,11 +89,11 @@ public class raza {
      
    } 
     
-   public void Eliminar(int id,String descripcion)
+   public void Eliminar(int id)
    {
       this.SetIdraza(id);
-      this.SetDescripcionraza(descripcion);
-      cnx.EjecutarComando("delete from raza where idraza="+idraza+";");
+      
+      cnx.EjecutarComando("delete from raza where id_raza="+idraza+";");
      
    }
  

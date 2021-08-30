@@ -5,8 +5,14 @@
  */
 package Frame;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import proyectoclinica.Conexion;
+import proyectoclinica.HeaderTable;
 import proyectoclinica.persona;
 
 /**
@@ -18,12 +24,22 @@ public class FramePersonal extends javax.swing.JFrame {
     /**
      * Creates new form FramePersonal
      */
+    FondoPanel fondo=new FondoPanel();
     persona per;
     DefaultTableModel model;
     Conexion cnx=new Conexion();
     public FramePersonal() {
+        this.setContentPane(fondo);
+        
         per=new persona();
         initComponents();
+        this.repintarHeaderTabla();
+        
+    }
+      private void repintarHeaderTabla(){
+        JTableHeader jtableHeader = tablepersonal.getTableHeader();
+        jtableHeader.setDefaultRenderer(new HeaderTable());
+        tablepersonal.setTableHeader(jtableHeader);
     }
 
     /**
@@ -295,4 +311,15 @@ public class FramePersonal extends javax.swing.JFrame {
     private javax.swing.JTextPane jnombre;
     private javax.swing.JTable tablepersonal;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel{
+    private Image imagen;
+    
+    @Override
+    public void paint(Graphics g)
+    {   imagen= new ImageIcon(getClass().getResource("/Imagen/fondo.jpg")).getImage();
+       g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+       setOpaque(false);
+       super.paint(g);
+    }
+}
 }

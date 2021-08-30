@@ -248,7 +248,7 @@ this.dispose();        // TODO add your handling code here:
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
  // TODO add your handling code here:
-        rz.Eliminar(Integer.parseInt(idrz.getText()),desrz.getText());
+        rz.Eliminar(Integer.parseInt(idrz.getText()));
         rz.Buscar(tableraza,"");
 
         JOptionPane.showMessageDialog(rootPane, "Los datos se han ELIMINADO con exito");

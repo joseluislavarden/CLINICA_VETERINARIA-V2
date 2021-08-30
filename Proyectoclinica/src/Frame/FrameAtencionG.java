@@ -311,7 +311,7 @@ Conexion cnx=new Conexion();
            
             
         } else {
-            JOptionPane.showMessageDialog(this, "No ha seleccionado ");
+            JOptionPane.showMessageDialog(this, "No ha seleccionado servicio");
         }
      
     }//GEN-LAST:event_jButton2ActionPerformed

@@ -36,6 +36,7 @@ public class FrameAnimal extends javax.swing.JFrame {
          pro= new Propietario();
         
         initComponents();
+         rz.Buscar(tablatipoan, "");
         // rz.ListarRaza(desplegable);
          this.repintarHeaderTablaan();
         this.repintarHeaderTablapro();
@@ -69,8 +70,6 @@ public class FrameAnimal extends javax.swing.JFrame {
         JTnombreAnimal = new javax.swing.JTextPane();
         jScrollPane6 = new javax.swing.JScrollPane();
         jcolor = new javax.swing.JTextPane();
-        idpro = new javax.swing.JScrollPane();
-        jtidpropietario = new javax.swing.JTextPane();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -78,12 +77,10 @@ public class FrameAnimal extends javax.swing.JFrame {
         cipro = new javax.swing.JTextPane();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jbbuscar = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         JBAGREGAR = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -92,37 +89,30 @@ public class FrameAnimal extends javax.swing.JFrame {
         tablepro = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jraza = new javax.swing.JTextPane();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTipoan = new javax.swing.JTextPane();
+        tablatipoan = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel13.setText("Raza:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
+        jLabel13.setText("TIPO DE ANIMAL");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
 
         jScrollPane9.setViewportView(JTidanimal);
 
-        getContentPane().add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, -1));
+        getContentPane().add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 160, -1));
 
         jScrollPane8.setViewportView(JTfechaAnimal);
 
-        getContentPane().add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 150, -1));
+        getContentPane().add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 150, -1));
 
         jScrollPane7.setViewportView(JTnombreAnimal);
 
-        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 140, -1));
+        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 160, -1));
 
         jScrollPane6.setViewportView(jcolor);
 
-        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 140, -1));
-
-        idpro.setViewportView(jtidpropietario);
-
-        getContentPane().add(idpro, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 170, -1));
+        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 150, -1));
 
         jLabel11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel11.setText("Fecha de Nacimiento:");
@@ -134,11 +124,11 @@ public class FrameAnimal extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel9.setText("ID_Animal:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 170, 20));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 170, 20));
 
         jScrollPane2.setViewportView(cipro);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 180, -1));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 180, -1));
 
         jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel8.setText("Nombre Animal:");
@@ -146,15 +136,7 @@ public class FrameAnimal extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel7.setText("CI Propietario:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, -1));
-
-        jbbuscar.setText("buscar");
-        jbbuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbbuscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jbbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 170, -1));
 
         jButton6.setText("SALIR");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -186,11 +168,7 @@ public class FrameAnimal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 100, 40));
-
-        jLabel6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel6.setText("idpropietario");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, 60));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 600, 100, 40));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
@@ -229,25 +207,33 @@ public class FrameAnimal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, -1, -1));
 
-        jScrollPane4.setViewportView(jraza);
+        tablatipoan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 120, -1));
+            },
+            new String [] {
 
-        jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel1.setText("Tipo Animal");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
+            }
+        ));
+        jScrollPane4.setViewportView(tablatipoan);
 
-        jScrollPane5.setViewportView(jTipoan);
-
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 140, -1));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 320, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
-        an.Insertar(Integer.parseInt(JTidanimal.getText()), JTnombreAnimal.getText(),jcolor.getText(), JTfechaAnimal.getText(), Integer.parseInt(cipro.getText()),Integer.parseInt(jraza.getText()),Integer.parseInt(jTipoan.getText()));//desplegable.getItemAt(desplegable.getSelectedIndex()).GetIdraza());    
+      int fmod = tablatipoan.getSelectedRow();
+       if (fmod >= 0) {
+           String ra=tablatipoan.getValueAt(fmod, 0).toString();
+           String ti=tablatipoan.getValueAt(fmod, 3).toString();
+          an.Insertar(Integer.parseInt(JTidanimal.getText()), JTnombreAnimal.getText(),jcolor.getText(), JTfechaAnimal.getText(), Integer.parseInt(cipro.getText()),Integer.parseInt(ra),Integer.parseInt(ti));//desplegable.getItemAt(desplegable.getSelectedIndex()).GetIdraza());    
         an.Buscar(tablean, "");// TODO add your handling code here:
+            
+        } else {
+            JOptionPane.showMessageDialog(this, "No ha seleccionado ");
+        } 
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -259,14 +245,10 @@ pro.Buscar(tablepro, "");// TODO add your handling code here:
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jbbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscarActionPerformed
-//pro.Buscaridpro(tablepro,cipro.getText());
-    }//GEN-LAST:event_jbbuscarActionPerformed
-
     private void JBAGREGARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAGREGARActionPerformed
  int fmod = tablepro.getSelectedRow();
        if (fmod >= 0) {
-          jtidpropietario.setText(tablepro.getValueAt(fmod, 0).toString());
+          cipro.setText(tablepro.getValueAt(fmod, 0).toString());
           
         } else {
             JOptionPane.showMessageDialog(this, "No ha seleccionado ");
@@ -319,18 +301,15 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JTextPane JTidanimal;
     private javax.swing.JTextPane JTnombreAnimal;
     private javax.swing.JTextPane cipro;
-    private javax.swing.JScrollPane idpro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -338,16 +317,12 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextPane jTipoan;
-    private javax.swing.JButton jbbuscar;
     private javax.swing.JTextPane jcolor;
-    private javax.swing.JTextPane jraza;
-    private javax.swing.JTextPane jtidpropietario;
+    private javax.swing.JTable tablatipoan;
     private javax.swing.JTable tablean;
     private javax.swing.JTable tablepro;
     // End of variables declaration//GEN-END:variables
